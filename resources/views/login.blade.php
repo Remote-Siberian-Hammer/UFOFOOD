@@ -1,48 +1,63 @@
 @extends('layouts.base')
 
-@section('title', "Вход")
 @section('content')
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 mx-auto mt-5">
-                    <br>
-                    <div class="card p-3">
-                        <div class="row mb-4">
-                            <h3 class="text-center">Вход</h3>
-                        </div>
-                        <form action="{{ route('user.code') }}" method="POST">
+    <div class="row wrapper">
+        <div class="col-12">
+            <div class="col-4 mx-auto h-100">
+                <div class="ufo_card h-100 d-flex">
+                    <div class="ufo-menu w-100 mb-5 mx-auto">
+                       <div class="col-12">
+                            <h4 class="text-center">Вход</h4>
+                       </div>
+                       <div class="col-12">
+                        <form action="@if(empty($user_phone)) {{ route('admin.send_code') }} @else {{ route('admin.auth') }} @endif" method="post" class="mx-auto">
                             @csrf
-                            <div class="mb-3">
-                                <label for="exampleInputTelephone" class="form-label">Введите номер телефона <b><small class="text-danger">*</small></b></label>
-                                <input type="tel"
-                                       class="form-control"
-                                       name="phone"
-                                       id="exampleInputTelephone"
-                                       @if (isset($success)) value="{{ $phone }}" @endif
-                                       @error('phone') is-invalid @enderror>
-                                <small>
-                                    @error('phone') <span class="invalid-feedback d-block">{{ $message }}</span> @enderror
-                                </small>
-                            </div>
-                            {{-- Открыть после успешной отправки кода --}}
-                            @if (isset($success))
-                                @if ($status['code'] == 'ok')
-                                    <div class="mb-3">
-                                        <label for="exampleInputPassword" class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="code" value="000000" id="exampleInputPassword">
-                                    </div>
-                                @endif
+                            @if(empty($user_phone))
+                                <div class="mt-4 mb-4 alert alert-warning" role="alert">
+                                    На указанный вами номер будет отправлено СМС уведомление с паролем для входа.
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Введите номер телефона <b class="access">*</b></label>
+                                    <input 
+                                        type="tel" 
+                                        name="phone" 
+                                        id="exampleInputTelephone" 
+                                        class="form-control"
+                                        @error('phone') is-invalid @enderror>
+                                    <span class="text-center">@error('phone') <span class="invalid-feedback d-block">{{ $message }}</span> @enderror
+                                </div>
+                                <button type="submit" class="btn ufo_btn">Отправить код</button>
+                            @else
+                                <div class="mb-4">
+                                    <label class="form-label">Ваш номер телефона <b class="access">*</b></label>
+                                    <input 
+                                        type="tel" 
+                                        name="phone" 
+                                        id="exampleInputTelephone"
+                                        class="form-control" 
+                                        value="{{ $user_phone }}"
+                                        @error('phone') is-invalid @enderror>
+                                    <span class="text-center">@error('phone') <span class="invalid-feedback d-block">{{ $message }}</span> @enderror
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Введите код подтверждения <b class="access">*</b></label>
+                                    <input 
+                                        type="text" 
+                                        name="code" 
+                                        class="form-control w-50"
+                                        @error('code') is-invalid @enderror>
+                                    <span class="text-center">@error('code') <span class="invalid-feedback d-block">{{ $message }}</span> @enderror
+                                </div>
+                                <button type="submit" class="btn ufo_btn">@if(empty($user_phone)) Отправить код @else Войти @endif</button>
                             @endif
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary">ОТПРАВИТЬ</button>
-                            </div>
                         </form>
+                       </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#exampleInputTelephone")
