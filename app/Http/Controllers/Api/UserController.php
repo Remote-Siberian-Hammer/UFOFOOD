@@ -36,6 +36,7 @@ class UserController extends Controller
                     null,
                     null,
                     $request->Phone,
+                    $request->Role ? $request->Role : "Клиент",
                     null
                 )
             )
@@ -81,6 +82,7 @@ class UserController extends Controller
                     $request->FirstName,
                     $request->LastName,
                     $request->Phone,
+                    $request->Role,
                 )
             )
         ]);

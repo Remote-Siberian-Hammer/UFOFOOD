@@ -11,25 +11,32 @@
                         <div class="mt-3 d-flex align-items-center justify-content-center">
                             <div class="row">
                                 <div class="w-100">
-                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">Меню категории</a>
+                                    <a href="{{ route('admin.menu_category') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Меню категории</a>
                                 </div>
                                 <div class="w-100">
-                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">Меню</a>
+                                    <a href="{{ route('admin.menu') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Меню</a>
                                 </div>
                                 <div class="w-100">
-                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">Клиенты</a>
+                                    <a href="{{ route('admin.users_client') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Клиенты</a>
                                 </div>
                                 <div class="w-100">
-                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">Сотрудники</a>
+                                    <a href="{{ route('admin.users_employee') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Сотрудники</a>
                                 </div>
                                 <div class="w-100">
-                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">Заказы</a>
+                                    <a href="{{ route('admin.orders') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Заказы</a>
                                 </div>
                                 <div class="w-100">
-                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">История заказов</a>
+                                    <a href="{{ route('admin.food_order') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">История заказов</a>
                                 </div>
                                 <div class="w-100">
-                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">Выход</a>
+                                    <a href="#" class="btn ufo_btn d-block mx-auto w-90 mb-3">Игра</a>
+                                </div>
+                                <div class="w-100 mt-5">
+                                    <form action="{{ route('admin.logout') }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger d-block mx-auto w-90 mb-3">Выход</button>
+                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>

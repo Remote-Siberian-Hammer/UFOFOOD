@@ -57,4 +57,10 @@ class PostLoginUserController extends Controller
             return back()->with('error', 'Номер телефона или код не верны!');
         }
     }
+
+    public function logout()
+    {
+        session()->remove('user');
+        return redirect()->route('admin.send_code');
+    }
 }

@@ -17,7 +17,7 @@
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     </head>
     <body class="container-fluid">
-        <main class="container">
+        <main class="p-5">
             @yield('content')
         </main>
         <!-- Scripts -->

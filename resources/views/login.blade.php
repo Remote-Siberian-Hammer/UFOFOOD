@@ -10,7 +10,7 @@
                             <h4 class="text-center">Вход</h4>
                        </div>
                        <div class="col-12">
-                        <form action="@if(empty($user_phone)) {{ route('admin.send_code') }} @else {{ route('admin.auth') }} @endif" method="post" class="mx-auto">
+                        <form action="@if(empty($user_phone)) {{ route('admin.query.send_code') }} @else {{ route('admin.query.auth') }} @endif" method="post" class="mx-auto">
                             @csrf
                             @if(empty($user_phone))
                                 <div class="mt-4 mb-4 alert alert-warning" role="alert">

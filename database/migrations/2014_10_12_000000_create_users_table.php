@@ -19,6 +19,7 @@ return new class extends Migration
                 ->nullable(true);
             $table->string('Phone')
                 ->unique();
+            $table->enum('Role', ["Администратор", "Клиент", "Менеджер"]);
             $table->string('Code')
                 ->unique()
                 ->nullable(true);

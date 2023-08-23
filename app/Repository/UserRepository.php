@@ -27,6 +27,7 @@ class UserRepository implements IUserRepository
         $model->FirstName = null;
         $model->LastName = null;
         $model->Phone = $context->Phone;
+        $model->Role = $context->Role;
         $model->Code = null;
         $model->save();
         return $model;
@@ -63,10 +64,16 @@ class UserRepository implements IUserRepository
         {
             $model->LastName = $context->LastName;
         }
+        
 
         if ($context->Phone)
         {
             $model->Phone = $context->Phone;
+        }
+
+        if ($context->Role)
+        {
+            $model->Role = $context->Role;
         }
 
         $model->save();
