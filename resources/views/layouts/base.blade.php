@@ -12,12 +12,12 @@
 
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        @vite(['resources/css/app.css'])
+        @vite(['resources/css/app.css', 'resources/css/app.min.css'])
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     </head>
     <body class="container-fluid">
-        <main class="p-5">
+        <main class="p-desktop-5">
             @yield('content')
         </main>
         <!-- Scripts -->

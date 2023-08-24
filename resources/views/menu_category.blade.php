@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         <div class="mt-3 mb-3">
-            <a href="{{ route('admin') }}" class="btn ufo_btn_round d-block w-10">Назад</a>
+            <a href="{{ route('admin') }}" class="btn ufo_btn_round col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 d-block">Назад</a>
         </div>
         <div class="col-12">
-            <div class="col-10 mx-auto h-100">
+            <div class="col-xxl-10 col-xl-8 col-lg-10 col-md-12 col-12 mx-auto h-100">
                 <div class="mb-5">
                     <h3 class="text-center">Категории меню</h3>
                 </div>

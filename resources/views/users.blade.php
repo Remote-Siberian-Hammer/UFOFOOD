@@ -3,9 +3,9 @@
 @section('content')
     <div class="row">
         <div class="mt-3 mb-3">
-            <a href="{{ route('admin') }}" class="btn ufo_btn_round d-block w-10">Назад</a>
+            <a href="{{ route('admin') }}" class="btn ufo_btn_round col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 d-block">Назад</a>
         </div>
-        <div class="p-5">
+        <div class="p-desktop-5">
             <div class="col-12 mx-auto h-100">
                 <div class="mb-5">
                     <h3 class="text-center">Категории меню</h3>
@@ -25,9 +25,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Имя</th>
-                                        <th scope="col">Фамилия</th>
-                                        <th scope="col">Роль</th>
+                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Имя</th>
+                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Фамилия</th>
+                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Роль</th>
                                         <th scope="col">Номер телефона</th>
                                         <th scope="col"></th>
                                     </tr>
@@ -36,9 +36,9 @@
                                     @foreach ($users as $item)
                                         <tr>
                                             <th scope="row">{{ $item['id'] }}</th>
-                                            <th scope="row">{{ $item['FirstName'] }}</th>
-                                            <th scope="row">{{ $item['LastName'] }}</th>
-                                            <th scope="row">{{ $item['Role'] }}</th>
+                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">{{ $item['FirstName'] }}</th>
+                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">{{ $item['LastName'] }}</th>
+                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">{{ $item['Role'] }}</th>
                                             <th scope="row">{{ $item['Phone'] }}</th>
                                             <td>
                                                 <a href="{{ route('admin.users_update', ['id' => $item['id']]) }}" class="btn ufo_btn">Подробнее</a>

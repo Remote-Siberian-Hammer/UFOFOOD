@@ -3,7 +3,7 @@
 @section('content')
     <div class="row wrapper">
         <div class="col-12">
-            <div class="col-4 mx-auto h-100">
+            <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-12 mx-auto h-100">
                 <div class="ufo_card h-100 d-flex">
                     <div class="ufo-menu mb-5 mx-auto">
                         <img src="{{ asset('logo.png') }}" class="img-fluid mx-auto d-block" alt="UFOFOOD">

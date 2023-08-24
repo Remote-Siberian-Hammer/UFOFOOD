@@ -3,15 +3,15 @@
 @section('content')
     <div class="row">
         <div class="mt-3 mb-3">
-            <a href="{{ route('admin') }}" class="btn ufo_btn_round d-block w-10">Назад</a>
+            <a href="{{ route('admin') }}" class="btn ufo_btn_round col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 d-block">Назад</a>
         </div>
-        <div class="p-5">
+        <div class="p-desktop-5">
             <div class="col-12 mx-auto h-100">
                 <div class="mb-5">
                     <h3 class="text-center">Заказы</h3>
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-xxl-8 col-xl-8 col-12 mb-5">
                         <div class="ufo_card">
                             <h3 class="text-center">Заказы готовятся</h3>
                             <div class="mt-3">
@@ -22,7 +22,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Цена</th>
                                                 <th scope="col">Детали</th>
-                                                <th scope="col">Статус</th>
+                                                <th scope="col" class="d-xxl-blocl d-xl-block d-lg-block d-md-block d-none">Статус</th>
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
@@ -55,7 +55,7 @@
                                                             @endforeach
                                                         </ul> 
                                                     </th>
-                                                    <th scope="row">{{ $item['status'] }}</th>
+                                                    <th scope="row" class="d-xxl-blocl d-xl-block d-lg-block d-md-block d-none">{{ $item['status'] }}</th>
                                                     <th scope="row">
                                                         <form action="{{ route('admin.query.status_change') }}" method="post">
                                                             @csrf
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-xxl-4 col-xl-4 col-12">
                         <div class="ufo_card">
                             <h3 class="text-center">Заказы в доставке</h3>
                             <div class="mt-3">

@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         <div class="mt-3 mb-3">
-            <a href="{{ route('admin.users_employee') }}" class="btn ufo_btn_round d-block w-10">Назад</a>
+            <a href="{{ route('admin.users_employee') }}" class="btn ufo_btn_round col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2 col-3 d-block">Назад</a>
         </div>
         <div class="p-5">
-            <div class="col-10 mx-auto h-100">
+            <div class="col-xxl-10 col-xl-8 col-lg-10 col-md-12 col-12 mx-auto h-100">
                 <div class="mt-5 mb-5">
                     <h3 class="text-center">Обновить информацию о пользователе</h3>
                 </div>
@@ -18,7 +18,7 @@
                                     {!! \Session::get('success') !!}
                                 </div>
                             @endif
-                            <div class="col-8 mx-auto">
+                            <div class="col-12 mx-auto">
                                 <form action="{{ route('admin.query.users.update') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $user->id }}">

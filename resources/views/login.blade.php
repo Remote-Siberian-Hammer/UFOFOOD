@@ -3,7 +3,7 @@
 @section('content')
     <div class="row wrapper">
         <div class="col-12">
-            <div class="col-4 mx-auto h-100">
+            <div class="col-xxl-3 col-xl-5 col-lg-6 col-md-8 col-12 mx-auto h-100">
                 <div class="ufo_card h-100 d-flex">
                     <div class="ufo-menu w-100 mb-5 mx-auto">
                        <div class="col-12">
