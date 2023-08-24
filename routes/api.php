@@ -103,3 +103,10 @@ Route::prefix('push')->group(function () {
         Route::post('update', [\App\Http\Controllers\Api\PushUserSessionController::class, 'update']);
     });
 });
+
+Route::prefix('game')->group(function () {
+    Route::prefix('add')->group(function () {
+        Route::post('mark', [\App\Http\Controllers\Api\GameController::class, 'addMark']);
+        Route::post('bonus', [\App\Http\Controllers\Api\GameController::class, 'addBonus']);
+    });
+});
