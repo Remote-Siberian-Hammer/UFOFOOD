@@ -25,9 +25,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Имя</th>
-                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Фамилия</th>
-                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Роль</th>
+                                        <th scope="col" class="mobile-none">Имя</th>
+                                        <th scope="col" class="mobile-none">Фамилия</th>
+                                        <th scope="col" class="mobile-none">Роль</th>
                                         <th scope="col">Номер телефона</th>
                                         <th scope="col"></th>
                                     </tr>
@@ -36,9 +36,9 @@
                                     @foreach ($users as $item)
                                         <tr>
                                             <th scope="row">{{ $item['id'] }}</th>
-                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">{{ $item['FirstName'] }}</th>
-                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">{{ $item['LastName'] }}</th>
-                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">{{ $item['Role'] }}</th>
+                                            <th scope="row" class="mobile-none">{{ $item['FirstName'] }}</th>
+                                            <th scope="row" class="mobile-none">{{ $item['LastName'] }}</th>
+                                            <th scope="row" class="mobile-none">{{ $item['Role'] }}</th>
                                             <th scope="row">{{ $item['Phone'] }}</th>
                                             <td>
                                                 <a href="{{ route('admin.users_update', ['id' => $item['id']]) }}" class="btn ufo_btn">Подробнее</a>

@@ -22,7 +22,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Цена</th>
                                                 <th scope="col">Детали</th>
-                                                <th scope="col" class="d-xxl-blocl d-xl-block d-lg-block d-md-block d-none">Статус</th>
+                                                <th scope="col" class="mobile-none">Статус</th>
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
@@ -55,7 +55,7 @@
                                                             @endforeach
                                                         </ul> 
                                                     </th>
-                                                    <th scope="row" class="d-xxl-blocl d-xl-block d-lg-block d-md-block d-none">{{ $item['status'] }}</th>
+                                                    <th scope="row" class="mobile-none">{{ $item['status'] }}</th>
                                                     <th scope="row">
                                                         <form action="{{ route('admin.query.status_change') }}" method="post">
                                                             @csrf

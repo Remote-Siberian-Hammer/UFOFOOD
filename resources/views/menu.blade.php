@@ -25,10 +25,10 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Фото</th>
+                                        <th scope="col" class="mobile-none">Фото</th>
                                         <th scope="col">Категория</th>
                                         <th scope="col">Наименование</th>
-                                        <th scope="col" class="d-none d-xxl-block d-xl-block d-md-block">Описание</th>
+                                        <th scope="col" class="mobile-none">Описание</th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
@@ -36,12 +36,12 @@
                                     @foreach ($menu_list as $item)
                                         <tr>
                                             <th scope="row">{{ $item['id'] }}</th>
-                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">
+                                            <th scope="row" class="mobile-none">
                                                 <img src="{{ asset('/storage/'.$item['image']) }}" alt="{{ $item['title'] }}" class="img-fluid">
                                             </th>
                                             <th scope="row">{{ $item['category']['Title'] }}</th>
                                             <th scope="row">{{ $item['title'] }}</th>
-                                            <th scope="row" class="d-none d-xxl-block d-xl-block d-md-block">{{ mb_strimwidth($item['description'], 0, 180) }}...</th>
+                                            <th scope="row" class="mobile-none">{{ mb_strimwidth($item['description'], 0, 180) }}...</th>
                                             <td>
                                                 <a href="{{ route('admin.menu.update', ["id" => $item['id']]) }}" class="btn ufo_btn">Подробнее</a>
                                             </td>

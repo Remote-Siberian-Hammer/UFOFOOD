@@ -1,6 +1,7 @@
 .p-desktop-5{
     padding: 3em;
 }
+
 @media (max-width: 650px) {
     .p-desktop-5{
         padding: 1.5em;
@@ -10,6 +11,10 @@
         background-color: #f6f6f600;
         border-radius: 0em;
         box-shadow: none;
+    }
+    tr.mobile-none,
+    th.mobile-none{
+        display: none;
     }
 }
 @media(max-width: 480px) {
@@ -24,5 +29,9 @@
         background-color: #f6f6f600;
         border-radius: 0em;
         box-shadow: none;
+    }
+    tr.mobile-none,
+    th.mobile-none{
+        display: none;
     }
 }
