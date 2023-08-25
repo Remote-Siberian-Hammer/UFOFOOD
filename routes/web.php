@@ -55,6 +55,12 @@ Route::prefix('admin')->group(function () {
             Route::post('query/create', [PostMenuCategoryController::class, 'create'])->name('admin.query.menu_category.create');
             Route::post('query/delete', [PostMenuCategoryController::class, 'delete'])->name('admin.query.menu_category.delete');
         });
+
+        // Ингридиенты
+        Route::prefix('ingridient')->group(function () {
+            Route::get('/', [HomeController::class, 'ingridients'])->name('admin.ingridients');
+            Route::get('/create', [HomeController::class, 'ingridients_create'])->name('admin.ingridients_create');
+        });
     });
     // Пользователи
     Route::prefix('users')->group(function () {

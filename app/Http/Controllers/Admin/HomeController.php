@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Domain\Services\IngridientServices;
 use App\Domain\Services\MenuCategoryServices;
 use App\Domain\Services\MenuServices;
 use App\Domain\Services\PurchasesHistoryServices;
@@ -69,6 +70,44 @@ class HomeController extends Controller
         if (session()->get('user'))
         {
             return view('menu_category_create');
+        }
+        else
+        {
+            return redirect()->route('admin.send_code');
+        }
+    }
+
+    public function ingridients(IngridientServices $service, MenuCategory $menuCategory)
+    {
+        if (session()->get('user'))
+        {
+            $data = array();
+
+            foreach ($service->actionAll() as $item)
+            {
+                array_push($data, [
+                    "id" => $item->id,
+                    "title" => $item->Title,
+                    "category" => $menuCategory::find($item->CategoryId)
+                ]);
+            }
+            return view('ingridients', [
+                'ingridients' => $data
+            ]);
+        }
+        else
+        {
+            return redirect()->route('admin.send_code');
+        }
+    }
+
+    public function ingridients_create(MenuCategoryServices $menuCategoryService)
+    {
+        if (session()->get('user'))
+        {
+            return view('ingridient_create', [
+                'category_list' => $menuCategoryService->actionAll()
+            ]);
         }
         else
         {

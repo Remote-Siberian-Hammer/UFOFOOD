@@ -14,6 +14,9 @@
                                     <a href="{{ route('admin.menu_category') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Меню категории</a>
                                 </div>
                                 <div class="w-100">
+                                    <a href="{{ route('admin.ingridients') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Ингридиенты</a>
+                                </div>
+                                <div class="w-100">
                                     <a href="{{ route('admin.menu') }}" class="btn ufo_btn d-block mx-auto w-90 mb-3">Меню</a>
                                 </div>
                                 <div class="w-100">
