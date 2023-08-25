@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PostIngridientController;
 use App\Http\Controllers\Admin\PostLoginUserController;
 use App\Http\Controllers\Admin\PostMenuCategoryController;
 use App\Http\Controllers\Admin\PostMenuController;
@@ -60,6 +61,9 @@ Route::prefix('admin')->group(function () {
         Route::prefix('ingridient')->group(function () {
             Route::get('/', [HomeController::class, 'ingridients'])->name('admin.ingridients');
             Route::get('/create', [HomeController::class, 'ingridients_create'])->name('admin.ingridients_create');
+             // Запросы
+             Route::post('query/create', [PostIngridientController::class, 'create'])->name('admin.query.ingridients.create');
+             Route::post('query/delete', [PostIngridientController::class, 'delete'])->name('admin.query.ingridients.delete');
         });
     });
     // Пользователи

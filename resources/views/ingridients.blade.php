@@ -37,7 +37,7 @@
                                             <th scope="row" class="mobile-none">{{ $item['tile'] }}</th>
                                             <th scope="row" class="mobile-none">{{ $item['category']['Title'] }}</th>
                                             <td>
-                                                <form action="#" method="post">
+                                                <form action="{{ route('admin.query.ingridients.delete') }}" method="post">
                                                     <input type="hidden" name="id" value="{{ $item['id'] }}">
                                                     <button type="submit" class="btn btn-danger">Удалить</button>
                                                 </form>

@@ -14,7 +14,7 @@
                     <div class="ufo_card">
                         <div class="mt-3">
                             <div class="col-12 mx-auto">
-                                <form action="#" method="post" >
+                                <form action="{{ route('admin.query.ingridients.create') }}" method="post" >
                                     @csrf
                                     <div class="mb-3">
                                         <label class="form-label">Категория <b class="access">*</b></label>
