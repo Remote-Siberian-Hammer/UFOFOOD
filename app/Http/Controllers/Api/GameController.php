@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Domain\Services\GameService;
 use App\DTO\Game\AddBonusGameDTO;
 use App\DTO\Game\AddMarkGameDTO;
+use App\DTO\Game\ShowMarkGameDTO;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,14 @@ class GameController extends Controller
             new AddBonusGameDTO(
                 $request->MenuId,
                 $request->UserId
+            )
+        );
+    }
+    public function showMark(int $user_id, GameService $service)
+    {
+        return $service->ShowMarkAction(
+            new ShowMarkGameDTO(
+                $user_id,
             )
         );
     }

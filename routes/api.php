@@ -108,5 +108,6 @@ Route::prefix('game')->group(function () {
     Route::prefix('add')->group(function () {
         Route::post('mark', [\App\Http\Controllers\Api\GameController::class, 'addMark']);
         Route::post('bonus', [\App\Http\Controllers\Api\GameController::class, 'addBonus']);
+        Route::get('show/{user_id}', [\App\Http\Controllers\Api\GameController::class, 'showMark']);
     });
 });

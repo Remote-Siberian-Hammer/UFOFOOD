@@ -82,7 +82,7 @@ class UserController extends Controller
                     $request->FirstName,
                     $request->LastName,
                     $request->Phone,
-                    $request->Role,
+                    "Клиент",
                 )
             )
         ]);

@@ -49,4 +49,9 @@ class GameService implements IGameService
     {
         return $this->repository->AddBonus($context);
     }
+
+    public function ShowMarkAction(ShowMarkGameDTO $context)
+    {
+        return $this->repository->ShowGameMark($context);
+    }
 }
