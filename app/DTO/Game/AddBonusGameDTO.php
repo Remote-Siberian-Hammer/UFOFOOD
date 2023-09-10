@@ -4,12 +4,12 @@ namespace App\DTO\Game;
 
 class AddBonusGameDTO
 {
-    public int $MenuId;
+    public int $Money;
     public int $UserId;
 
-    public function __construct(int $MenuId, int $UserId)
+    public function __construct(int $Money, int $UserId)
     {
-        $this->MenuId = $MenuId;
+        $this->Money = $Money;
         $this->UserId = $UserId;
     }
 }

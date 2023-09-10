@@ -6,6 +6,7 @@ use App\Domain\IRepository\IGameRepository;
 use App\DTO\Game\AddBonusGameDTO;
 use App\DTO\Game\AddMarkGameDTO;
 use App\DTO\Game\ShowMarkGameDTO;
+use App\DTO\Game\ShowBonusGameDTO;
 use App\Models\Game;
 use App\Models\GameToBonus;
 
@@ -37,8 +38,13 @@ class GameRepository implements IGameRepository
     {
         $model = new GameToBonus();
         $model->UserId = $context->UserId;
-        $model->MenuId = $context->MenuId;
+        $model->Money = $context->Money;
         $model->save();
         return $model;
+    }
+
+    public function ShowBonus(ShowBonusGameDTO $context)
+    {
+        return GameToBonus::where('UserId', $context->UserId)->first();
     }
 }

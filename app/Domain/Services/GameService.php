@@ -4,6 +4,7 @@ namespace App\Domain\Services;
 
 use App\Domain\IServices\IGameService;
 use App\DTO\Game\AddBonusGameDTO;
+use App\DTO\Game\ShowBonusGameDTO;
 use App\DTO\Game\AddMarkGameDTO;
 use App\DTO\Game\ShowMarkGameDTO;
 use App\Repository\GameRepository;
@@ -48,6 +49,11 @@ class GameService implements IGameService
     public function AddBonusAction(AddBonusGameDTO $context)
     {
         return $this->repository->AddBonus($context);
+    }
+
+    public function ShowBonusAction(ShowBonusGameDTO $context)
+    {
+        return $this->repository->ShowBonus($context);
     }
 
     public function ShowMarkAction(ShowMarkGameDTO $context)

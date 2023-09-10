@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('game_to_bonuses', function (Blueprint $table) {
             $table->id();
-            $table->integer('MenuId');
+            $table->integer('Money');
             $table->integer('UserId');
             $table->timestamps();
-            $table->foreign('MenuId')
-                ->references('id')
-                ->on('menus')
-                ->onDelete('cascade');
             $table->foreign('UserId')
                 ->references('id')
                 ->on('users')

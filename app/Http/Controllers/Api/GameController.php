@@ -6,6 +6,7 @@ use App\Domain\Services\GameService;
 use App\DTO\Game\AddBonusGameDTO;
 use App\DTO\Game\AddMarkGameDTO;
 use App\DTO\Game\ShowMarkGameDTO;
+use App\DTO\Game\ShowBonusGameDTO;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class GameController extends Controller
     {
         return $service->AddBonusAction(
             new AddBonusGameDTO(
-                $request->MenuId,
+                $request->Money,
                 $request->UserId
             )
         );
@@ -34,6 +35,15 @@ class GameController extends Controller
     {
         return $service->ShowMarkAction(
             new ShowMarkGameDTO(
+                $user_id,
+            )
+        );
+    }
+
+    public function showBonus(int $user_id, GameService $service)
+    {
+        return $service->ShowBonusAction(
+            new ShowBonusGameDTO(
                 $user_id,
             )
         );
